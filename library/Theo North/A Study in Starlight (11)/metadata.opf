@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">11</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">71647bcc-0af0-45a6-b792-d4053c37f35b</dc:identifier>
+        <dc:title>A Study in Starlight</dc:title>
+        <dc:creator opf:file-as="North, Theo" opf:role="aut">Theo North</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.16.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>Two astronomers chart a constellation that changes every night. Original sample book for previewing the library UI.</dc:description>
+        <dc:publisher>Bookshelf Preview Collection</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>UI Sample</dc:subject>
+        <dc:subject>Science Fiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-11-06T17:07:29.711392+00:00"/>
+        <meta name="calibre:title_sort" content="Study in Starlight, A"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

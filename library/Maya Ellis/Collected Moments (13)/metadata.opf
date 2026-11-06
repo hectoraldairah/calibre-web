@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">13</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9dfe8b26-cacf-46bf-a1d0-502050fb73e1</dc:identifier>
+        <dc:title>Collected Moments</dc:title>
+        <dc:creator opf:file-as="Ellis, Maya" opf:role="aut">Maya Ellis</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.16.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>Short reflections on light, memory, and the shape of ordinary days. Original sample book for previewing the library UI.</dc:description>
+        <dc:publisher>Bookshelf Preview Collection</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>UI Sample</dc:subject>
+        <dc:subject>Poetry</dc:subject>
+        <meta name="calibre:timestamp" content="2026-11-06T17:07:30.819136+00:00"/>
+        <meta name="calibre:title_sort" content="Collected Moments"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

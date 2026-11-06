@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">8</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">570b948d-c7b0-4c37-9fe6-f966b1d99197</dc:identifier>
+        <dc:title>Wildflowers &amp; Other Things</dc:title>
+        <dc:creator opf:file-as="Moss, Clara" opf:role="aut">Clara Moss</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.16.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>A field notebook about the small things worth stopping for. Original sample book for previewing the library UI.</dc:description>
+        <dc:publisher>Bookshelf Preview Collection</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>UI Sample</dc:subject>
+        <dc:subject>Nature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-11-06T17:07:27.849276+00:00"/>
+        <meta name="calibre:title_sort" content="Wildflowers &amp; Other Things"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

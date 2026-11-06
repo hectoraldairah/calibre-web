@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">4</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ec3364d2-2b64-472d-9205-40dfbc9bd9b8</dc:identifier>
+        <dc:title>Small Gardens</dc:title>
+        <dc:creator opf:file-as="Moss, Clara" opf:role="aut">Clara Moss</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.16.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>Notes on finding a little wilderness in everyday places. Original sample book for previewing the library UI.</dc:description>
+        <dc:publisher>Bookshelf Preview Collection</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>UI Sample</dc:subject>
+        <dc:subject>Nature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-11-06T17:07:25.386442+00:00"/>
+        <meta name="calibre:title_sort" content="Small Gardens"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

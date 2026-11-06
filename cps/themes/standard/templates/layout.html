@@ -18,8 +18,11 @@
     {% block header %}{% endblock %}
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url_for('static', filename='css/upload.css') }}" rel="stylesheet" media="screen">
+    {% for theme_css in g.theme['css_files'] %}
+    <link href="{{ url_for('static', filename=theme_css) }}" rel="stylesheet" media="screen">
+    {% endfor %}
   </head>
-  <body class="{{ page }} {{ bodyClass }}">
+  <body class="{{ page }} {{ bodyClass }} {{ g.theme['body_class'] }}">
     <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container-fluid">
@@ -186,5 +189,8 @@
     <script src="{{ url_for('static', filename='js/uploadprogress.js') }}"> </script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block js %}{% endblock %}
+    {% for theme_js in g.theme['js_files'] %}
+    <script src="{{ url_for('static', filename=theme_js) }}"></script>
+    {% endfor %}
   </body>
 </html>

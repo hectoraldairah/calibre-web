@@ -60,12 +60,37 @@ THEMES = (
         "show_home_shortcuts": False,
         "profile_dropdown": False,
         "show_upload_loader": False
+    },
+    {
+        "id": 3,
+        "identifier": "bookshelf",
+        "label": "Bookshelf Theme",
+        "configurable": True,
+        "css_files": ("css/bookshelf.css",),
+        "js_files": (),
+        "body_class": "bookshelf",
+        "show_home_shortcuts": False,
+        "profile_dropdown": False,
+        "show_upload_loader": False
+    },
+    {
+        "id": 4,
+        "identifier": "pixel",
+        "label": "Pixel Art Theme",
+        "configurable": True,
+        "css_files": ("css/pixel.css",),
+        "js_files": (),
+        "body_class": "pixel",
+        "show_home_shortcuts": False,
+        "profile_dropdown": False,
+        "show_upload_loader": False
     }
 )
 
 THEMES_BY_ID = {theme["id"]: theme for theme in THEMES}
 THEMES_BY_IDENTIFIER = {theme["identifier"]: theme for theme in THEMES}
-DEFAULT_THEME = THEMES_BY_ID[0]
+DEFAULT_THEME = THEMES_BY_IDENTIFIER["bookshelf"]
+BASE_THEME_IDENTIFIER = "standard"
 SIMPLE_THEME_IDENTIFIER = THEMES_BY_ID[2]["identifier"]
 
 

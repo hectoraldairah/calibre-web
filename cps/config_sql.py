@@ -33,7 +33,7 @@ try:
 except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
 
-from . import constants, logger
+from . import constants, logger, themes
 from .binary_helper import resolve_binary_path, SUPPORTED_KEPUBIFY_BINARIES, SUPPORTED_UNRAR_BINARIES
 from .subproc_wrapper import process_wait
 from .string_helper import strip_whitespaces
@@ -87,7 +87,7 @@ class _Settings(_Base):
     config_title_regex = Column(String,
                                 default=r"^(A|The|An|Der|Die|Das|Den|Ein|Eine"
                                         r"|Einen|Dem|Des|Einem|Eines|Le|La|Les|L'|Un|Une)(\s+|(?<='))")
-    config_theme = Column(Integer, default=0)
+    config_theme = Column(Integer, default=themes.get_default_theme()["id"])
 
     config_log_level = Column(SmallInteger, default=logger.DEFAULT_LOG_LEVEL)
     config_logfile = Column(String, default=logger.DEFAULT_LOG_FILE)

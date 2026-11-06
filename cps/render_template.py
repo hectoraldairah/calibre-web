@@ -40,10 +40,10 @@ def themed_render(template_name, **kwargs):
     try:
         return render_theme_template(active_theme, template_name, _fallback=False, **kwargs)
     except TemplateNotFound:
-        default_theme = themes.get_default_theme()["identifier"]
-        if active_theme == default_theme:
+        base_theme = themes.BASE_THEME_IDENTIFIER
+        if active_theme == base_theme:
             raise
-        return render_template("_themes/{}/{}".format(default_theme, template_name),
+        return render_template("_themes/{}/{}".format(base_theme, template_name),
                                _theme=active_theme,
                                **kwargs)
 

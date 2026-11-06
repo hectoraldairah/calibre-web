@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">5</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4acccfc2-bab1-4602-9226-3a6c70d16ca0</dc:identifier>
+        <dc:title>Beyond the Moon</dc:title>
+        <dc:creator opf:file-as="North, Theo" opf:role="aut">Theo North</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.16.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>An observatory receives a message from the far side of the sky. Original sample book for previewing the library UI.</dc:description>
+        <dc:publisher>Bookshelf Preview Collection</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>UI Sample</dc:subject>
+        <dc:subject>Science Fiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-11-06T17:07:25.940264+00:00"/>
+        <meta name="calibre:title_sort" content="Beyond the Moon"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>
