@@ -307,6 +307,10 @@ body.bookshelf {
 .bookshelf .btn-danger:hover,
 .bookshelf .btn-danger:focus { background: var(--shelf-danger); color: var(--shelf-surface); }
 .bookshelf .btn-warning { background: var(--shelf-warning-bg); color: var(--shelf-warning); border-color: var(--shelf-sand); }
+.bookshelf a[role="button"],
+.bookshelf a[role="button"]:hover,
+.bookshelf a[role="button"]:focus,
+.bookshelf a[role="button"]:active { color: var(--shelf-paper); }
 .bookshelf .btn.disabled,
 .bookshelf .btn[disabled],
 .bookshelf .btn.disabled:hover,
