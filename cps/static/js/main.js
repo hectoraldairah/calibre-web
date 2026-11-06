@@ -422,13 +422,30 @@ $(function() {
         });
     }
 
-    // Bookshelf uses CSS Grid; Isotope's absolute positioning would override it.
-    var $isotopeGrids = $("body").hasClass("bookshelf") ? $() : $(".discover .row.display-flex");
+    var isBookshelf = $("body").hasClass("bookshelf");
+    var $isotopeGrids = $(".discover .row.display-flex");
+    if (isBookshelf) {
+        $isotopeGrids.each(function() {
+            if ($(this).children(".book").length) {
+                $(this).prepend('<div class="bookshelf-masonry-gutter" aria-hidden="true"></div>');
+            }
+        });
+    }
     $isotopeGrids.isotope({
         // options
         itemSelector : ".book",
-        layoutMode : "fitRows"
+        layoutMode : isBookshelf ? "masonry" : "fitRows",
+        percentPosition : isBookshelf,
+        masonry : {
+            columnWidth : ".book",
+            gutter : ".bookshelf-masonry-gutter"
+        }
     });
+    if (isBookshelf && document.fonts) {
+        document.fonts.ready.then(function() {
+            $isotopeGrids.isotope("layout");
+        });
+    }
 
     if ($(".load-more").length && $(".next").length) {
         var $loadMore = $(".load-more .row.display-flex").infiniteScroll({

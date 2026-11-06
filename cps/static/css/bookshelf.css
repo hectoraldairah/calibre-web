@@ -185,13 +185,17 @@ body.bookshelf {
 .bookshelf .filterheader .btn:hover,
 .bookshelf .filterheader .btn.active { background: var(--shelf-mist); border-color: var(--shelf-sage); }
 
-/* A real grid replaces fixed-width Bootstrap columns only in book collections. */
+/* Isotope masonry shares its column spacing with the responsive CSS fallback. */
 .bookshelf .discover > .row.display-flex {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
-  gap: 24px;
+  --shelf-columns: 3;
+  --shelf-gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--shelf-gap);
+  align-items: flex-start;
   margin: 0;
 }
+.bookshelf .bookshelf-masonry-gutter { position: absolute; width: var(--shelf-gap); height: 0; }
 .bookshelf .discover > .row.display-flex::before,
 .bookshelf .discover > .row.display-flex::after { display: none; }
 .bookshelf .discover > .row.display-flex:empty {
@@ -202,10 +206,10 @@ body.bookshelf {
 }
 .bookshelf .container-fluid .discover .book {
   float: none;
-  width: auto;
+  width: calc((100% - (var(--shelf-columns) - 1) * var(--shelf-gap)) / var(--shelf-columns));
   max-width: none;
   min-width: 0;
-  margin: 0;
+  margin: 0 0 var(--shelf-gap);
   padding: 14px;
   background: var(--shelf-surface);
   border: 1px solid var(--shelf-sand);
@@ -385,6 +389,18 @@ body.bookshelf {
 .bookshelf .tooltip-inner { background: var(--shelf-ink); color: var(--shelf-surface); font-family: inherit; white-space: normal; }
 .bookshelf-bottom-nav { display: none; }
 
+@media (min-width: 1101px) {
+  .bookshelf .discover > .row.display-flex { --shelf-columns: 4; }
+}
+
+@media (min-width: 1400px) {
+  .bookshelf .discover > .row.display-flex { --shelf-columns: 5; }
+}
+
+@media (min-width: 1600px) {
+  .bookshelf .discover > .row.display-flex { --shelf-columns: 6; }
+}
+
 @media (min-width: 768px) and (max-width: 1100px) {
   .bookshelf > .container-fluid > .row-fluid > .col-sm-2 { width: 25%; }
   .bookshelf > .container-fluid > .row-fluid > .col-sm-10 { width: 75%; }
@@ -404,7 +420,7 @@ body.bookshelf {
   .bookshelf .navbar-nav > li > a { min-height: 44px; }
   .bookshelf .navbar-brand { font-size: 26px; }
   .bookshelf h2 { font-size: 28px; }
-  .bookshelf .discover > .row.display-flex { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .bookshelf .discover > .row.display-flex { --shelf-columns: 2; --shelf-gap: 12px; }
   .bookshelf .container-fluid .discover .book { padding: 10px; }
   .bookshelf .container-fluid .book .meta .title { font-size: 14px; }
   .bookshelf .filterheader.hidden-xs { display: flex !important; }
