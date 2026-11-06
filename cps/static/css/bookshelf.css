@@ -18,6 +18,7 @@ body.bookshelf {
   --shelf-muted-on-ivory: #62685f;
   --shelf-on-sage: #080c08;
   --shelf-surface: #fffcf7;
+  --shelf-paper: #faf8f4;
   --shelf-accent-ink: #425645;
   --shelf-hover: #556957;
   --shelf-track: #e6dfd5;
@@ -285,7 +286,6 @@ body.bookshelf {
   color: var(--shelf-on-sage);
   font-weight: 600;
 }
-.bookshelf .btn-primary { color: var(--shelf-surface); }
 .bookshelf .btn-primary:hover,
 .bookshelf .btn-primary:focus,
 .bookshelf .btn-primary.active,
@@ -293,6 +293,12 @@ body.bookshelf {
 .bookshelf .open > .dropdown-toggle.btn-primary,
 .bookshelf .btn-success:hover,
 .bookshelf .btn-success:focus { background: var(--shelf-hover); border-color: var(--shelf-hover); color: var(--shelf-surface); }
+.bookshelf .btn-primary,
+.bookshelf .btn-primary:hover,
+.bookshelf .btn-primary:focus,
+.bookshelf .btn-primary.active,
+.bookshelf .btn-primary:active,
+.bookshelf .open > .dropdown-toggle.btn-primary { color: var(--shelf-paper); }
 .bookshelf .btn-info { background: var(--shelf-mist); border-color: var(--shelf-moss); color: var(--shelf-accent-ink); }
 .bookshelf .btn-info:hover,
 .bookshelf .btn-info.active,
