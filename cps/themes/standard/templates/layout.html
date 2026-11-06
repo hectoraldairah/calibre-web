@@ -22,7 +22,7 @@
     <link href="{{ url_for('static', filename=theme_css) }}" rel="stylesheet" media="screen">
     {% endfor %}
   </head>
-  <body class="{{ page }} {{ bodyClass }} {{ g.theme['body_class'] }}">
+  <body class="{{ page }} {{ bodyClass }} {{ g.theme['body_class'] }}{% if g.theme['identifier'] == 'bookshelf' and (current_user.is_authenticated or g.allow_anonymous) %} has-bookshelf-bottom-nav{% endif %}">
     <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container-fluid">
@@ -41,7 +41,7 @@
               <label for="query" class="sr-only">{{_('Search')}}</label>
               <input type="text" class="form-control" id="query" name="query" placeholder="{{_('Search Library')}}" value="{{searchterm}}">
               <span class="input-group-btn">
-                <button type="submit" id="query_submit" class="btn btn-default">{{_('Search')}}</button>
+                <button type="submit" id="query_submit" class="btn btn-default">{% if g.theme['identifier'] == 'bookshelf' %}<span class="glyphicon glyphicon-search" aria-hidden="true"></span><span class="sr-only">{{_('Search')}}</span>{% else %}{{_('Search')}}{% endif %}</button>
               </span>
             </div>
           </form>
@@ -89,22 +89,22 @@
     {% for message in get_flashed_messages(with_categories=True) %}
       {%if message[0] == "error" %}
       <div class="row-fluid text-center" >
-        <div id="flash_danger" class="alert alert-danger">{{ message[1] }}</div>
+        <div id="flash_danger" class="alert alert-danger" role="alert">{% if g.theme['identifier'] == 'bookshelf' %}<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>{% endif %}{{ message[1] }}</div>
       </div>
       {%endif%}
       {%if message[0] == "info" %}
       <div class="row-fluid text-center">
-        <div id="flash_info" class="alert alert-info">{{ message[1] }}</div>
+        <div id="flash_info" class="alert alert-info" role="status">{% if g.theme['identifier'] == 'bookshelf' %}<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>{% endif %}{{ message[1] }}</div>
       </div>
       {%endif%}
       {%if message[0] == "warning" %}
       <div class="row-fluid text-center">
-        <div id="flash_warning" class="alert alert-warning">{{ message[1] }}</div>
+        <div id="flash_warning" class="alert alert-warning" role="alert">{% if g.theme['identifier'] == 'bookshelf' %}<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>{% endif %}{{ message[1] }}</div>
       </div>
       {%endif%}
       {%if message[0] == "success" %}
       <div class="row-fluid text-center">
-        <div id="flash_success" class="alert alert-success">{{ message[1] }}</div>
+        <div id="flash_success" class="alert alert-success" role="status">{% if g.theme['identifier'] == 'bookshelf' %}<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>{% endif %}{{ message[1] }}</div>
       </div>
       {%endif%}
     {% endfor %}
@@ -114,7 +114,7 @@
         {% if current_user.is_authenticated or g.allow_anonymous %}
         <div class="col-sm-2">
           <nav class="navigation">
-            <ul class="list-unstyled" id="scnd-nav" intent in-standard-append="nav.navigation" in-mobile-after="#main-nav" in-mobile-class="nav navbar-nav">
+            <ul class="list-unstyled" id="scnd-nav"{% if g.theme['identifier'] != 'bookshelf' %} intent in-standard-append="nav.navigation" in-mobile-after="#main-nav" in-mobile-class="nav navbar-nav"{% endif %}>
               <li class="nav-head hidden-xs">{{_('Browse')}}</li>
               {% for element in sidebar %}
                 {% if current_user.check_visibility(element['visibility']) and element['public'] %}
@@ -162,6 +162,7 @@
       </div>
     </div>
   </div>
+    {% block bottom_navigation %}{% endblock %}
     <div class="modal fade" id="bookDetailsModal" tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

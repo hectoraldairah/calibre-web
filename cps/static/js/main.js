@@ -422,7 +422,9 @@ $(function() {
         });
     }
 
-    $(".discover .row.display-flex").isotope({
+    // Bookshelf uses CSS Grid; Isotope's absolute positioning would override it.
+    var $isotopeGrids = $("body").hasClass("bookshelf") ? $() : $(".discover .row.display-flex");
+    $isotopeGrids.isotope({
         // options
         itemSelector : ".book",
         layoutMode : "fitRows"
@@ -444,7 +446,7 @@ $(function() {
                 $(" a:not(.dropdown-toggle) ")
                   .removeAttr("data-toggle");
             }
-            $(".load-more .row.display-flex").isotope( "appended", $(data), null );
+            $isotopeGrids.filter(".load-more .row.display-flex").isotope( "appended", $(data), null );
         });
 
         // fix for infinite scroll on CaliBlur Theme (#981)
@@ -856,7 +858,7 @@ $(function() {
     });
 
     $(window).resize(function() {
-        $(".discover .row.display-flex").isotope("layout");
+        $isotopeGrids.isotope("layout");
     });
 
     $("#import_ldap_users").click(function() {
@@ -881,7 +883,7 @@ $(function() {
         $(this).parent().find("a.author-name").slice($(this).data("authors-max")).toggle();
         $(this).parent().find("span.author-hidden-divider").toggle();
         $(this).html() === $(this).data("collapse-caption") ? $(this).html("(...)") : $(this).html($(this).data("collapse-caption"));
-        $(".discover .row.display-flex").isotope("layout");
+        $isotopeGrids.isotope("layout");
     });
 
     $(".update-view").click(function(e) {

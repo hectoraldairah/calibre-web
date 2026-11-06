@@ -67,7 +67,7 @@ THEMES = (
         "label": "Bookshelf Theme",
         "configurable": True,
         "css_files": ("css/bookshelf.css",),
-        "js_files": (),
+        "js_files": ("js/bookshelf.js",),
         "body_class": "bookshelf",
         "show_home_shortcuts": False,
         "profile_dropdown": False,

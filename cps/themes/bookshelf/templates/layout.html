@@ -1,1 +1,20 @@
 {% extends "_themes/standard/layout.html" %}
+
+{% block bottom_navigation %}
+{% if current_user.is_authenticated or g.allow_anonymous %}
+<nav class="bookshelf-bottom-nav" aria-label="{{_('Browse')}}">
+  {% for element in sidebar if current_user.check_visibility(element['visibility']) and element['public'] %}
+    {% if loop.index <= 3 %}
+    <a href="{% if element['no_param'] %}{{url_for(element['link'], data=element['page'])}}{% else %}{{url_for(element['link'], data=element['page'], sort_param='stored')}}{% endif %}"{% if page == element['page'] %} aria-current="page"{% endif %}>
+      <span class="glyphicon {{element['glyph']}}" aria-hidden="true"></span>
+      <span>{{_(element['text'])}}</span>
+    </a>
+    {% endif %}
+  {% endfor %}
+  <a href="{{url_for('search.advanced_search')}}"{% if request.endpoint == 'search.advanced_search' %} aria-current="page"{% endif %}>
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    <span>{{_('Advanced Search')}}</span>
+  </a>
+</nav>
+{% endif %}
+{% endblock %}
